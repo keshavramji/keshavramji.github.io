@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keshav Ramji</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Keshav Ramji - Researcher working on alignment, reasoning, and post-training for large language models at IBM Research">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Keshav Ramji – ML Researcher">
+  <meta property="og:description" content="Researcher in Machine Learning and Language Models">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #666666;
+      --link: #2563eb;
+      --link-hover: #1d4ed8;
+      --border: #e5e7eb;
+      --accent-bg: #f8fafc;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --card-bg: #ffffff;
+      --highlight: #eff6ff;
+      --tab-active: #2563eb;
+      --tab-inactive: #94a3b8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --fg: #f1f5f9;
+        --muted: #94a3b8;
+        --link: #60a5fa;
+        --link-hover: #93c5fd;
+        --border: #334155;
+        --accent-bg: #1e293b;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --card-bg: #1e293b;
+        --highlight: #1e3a5f;
+        --tab-active: #60a5fa;
+        --tab-inactive: #64748b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
+      animation: fadeInDown 0.6s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header-text {
+      flex: 1 1 300px;
+      min-width: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 0.3rem 0;
+      background: linear-gradient(135deg, var(--fg) 0%, var(--link) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 0 0 1.2rem 0;
+      font-weight: 500;
+    }
+
+    .lead {
+      margin: 0 0 1rem 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .contact {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0;
+    }
+
+    .contact a {
+      text-decoration: none;
+      color: var(--link);
+      margin-right: 1.2rem;
+      white-space: nowrap;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .contact a:hover {
+      color: var(--link-hover);
+      transform: translateX(2px);
+    }
+
+    .headshot-container {
+      position: relative;
+      animation: fadeIn 0.8s ease-out 0.2s both;
+    }
+
+    .headshot {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      background: var(--accent-bg);
+      box-shadow: 0 4px 6px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .headshot:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px var(--shadow);
+    }
+
+    /* Tab Navigation Styles */
+    .tab-navigation {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      margin: 0 0 2rem 0;
+      border-bottom: 2px solid var(--border);
+      padding: 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px var(--shadow);
+      animation: fadeIn 0.6s ease-out 0.3s both;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tabs::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      padding: 1rem 1.5rem;
+      background: transparent;
+      border: none;
+      color: var(--tab-inactive);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      border-bottom: 3px solid transparent;
+      font-family: inherit;
+    }
+
+    .tab:hover {
+      color: var(--link);
+      background: var(--accent-bg);
+    }
+
+    .tab.active {
+      color: var(--tab-active);
+      border-bottom-color: var(--tab-active);
+    }
+
+    .tab:focus {
+      outline: none;
+      background: var(--accent-bg);
+    }
+
+    /* Tab Content Styles */
+    .tab-content-container {
+      position: relative;
+      min-height: 400px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Section Content Styles */
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+      position: relative;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--link);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+      margin-top: 1.5rem;
+      font-weight: 600;
+      color: var(--fg);
+    }
+
+    h3:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--fg);
+    }
+
+    a {
+      color: var(--link);
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+  /* Publication Cards */
+    .pub-item {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .pub-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow);
+      border-color: var(--link);
+    }
+
+    .pub-image {
+      flex-shrink: 0;
+      width: 200px;
+      height: 150px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .pub-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .pub-item:hover .pub-image img {
+      transform: scale(1.05);
+    }
+
+    .pub-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .pub-venue {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .pub-links a {
+      display: inline-block;
+      margin-right: 0.8rem;
+      margin-bottom: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .pub-links a:hover {
+      background: var(--link);
+      color: white;
+      border-color: var(--link);
+    }
+
+    /* Responsive for publications */
+    @media (max-width: 768px) {
+      .pub-item {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .pub-image {
+        width: 100%;
+        height: 180px;
+      }
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* Experience Cards */
+    .experience-item {
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      background: var(--accent-bg);
+      border-left: 3px solid var(--link);
+      border-radius: 4px;
+    }
+
+    .experience-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.2rem;
+    }
+
+    .experience-item .meta {
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    /* Research Interest Tags */
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+
+    .tag {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--fg);
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: var(--link);
+      color: white;
+      border-color: var(--link);
+      transform: translateY(-1px);
+    }
+
+    /* Tagline Box */
+    .tagline-box {
+      background: var(--highlight);
+      border-left: 4px solid var(--link);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--link);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px var(--shadow);
+      text-decoration: none;
+      font-size: 1.5rem;
+      z-index: 1000;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px var(--shadow);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page {
+        padding: 2rem 1.2rem 3rem;
+      }
+
+      header {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .headshot {
+        width: 120px;
+        height: 120px;
+      }
+
+      .tab {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .contact {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact a {
+        margin-right: 0;
+      }
+
+      .tab {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-text">
+        <h1>Keshav Ramji</h1>
+
+        <p class="lead">
+          I research <strong>post-training reasoning and alignment through reinforcement learning</strong> at IBM Research AI. My research broadly lies at the intersection of natural language processing and statistical machine learning. I aim to build a deeper empirical and mathematical understanding of language model behavior towards developing more capable AI agents. Some areas I'm excited about are:
+        </p>
+
+        <p>
+         (1) Building <strong>continually and autonomously self-improving AI systems</strong> that can reason about complex tasks and aid in discovery.
+        </p>
+
+        <p>
+          (2) Facilitating <strong>efficient adaptation</strong> to new skills and behaviors.
+        </p>
+
+        <p>
+          (3) Studying <strong>new reasoning pathways</strong> that improve expressivity and efficiency.
+        </p>
+
+        <p>
+          (4) Ensuring <strong>reliability</strong> and <strong>robustness</strong> in real-world deployment.
+        </p>
+
+        <p>
+          I'm always happy to chat about research or potential collaborations. I especially enjoy mentoring students interested in getting involved in the field. 
+          Feel free to reach out through any of the channels below.
+      </p>
+
+        <div class="contact">
+          <span>Email: <a href="mailto:keshavsramji@gmail.com">keshavsramji@gmail.com</a></span>
+          <a href="https://scholar.google.com/citations?user=r2wp_JsAAAAJ&hl=en" target="_blank"> Google Scholar</a>
+          <a href="https://linkedin.com/in/keshav-ramji" target="_blank"> LinkedIn</a>
+          <a href="https://twitter.com/KeshavRamji" target="_blank">Twitter</a>
+        </div>
+      </div>
+
+      <div class="headshot-container">
+        <img src="images/KR_headshot.jpg" alt="Photo of Keshav Ramji" class="headshot">
+      </div>
+    </header>
+
+    <!-- TAB NAVIGATION -->
+    <nav class="tab-navigation">
+      <div class="tabs">
+        <button class="tab active" onclick="openTab(event, 'about')">About</button>
+        <button class="tab" onclick="openTab(event, 'publications')">Publications</button>
+        <button class="tab" onclick="openTab(event, 'experience')">Experience</button>
+        <button class="tab" onclick="openTab(event, 'teaching')">Academics</button>
+        <button class="tab" onclick="openTab(event, 'mentoring')">Mentoring & Leadership</button>
+        <button class="tab" onclick="openTab(event, 'awards')">Service & Awards</button>
+      </div>
+    </nav>
+
+    <!-- TAB CONTENT -->
+    <div class="tab-content-container">
+
+      <!-- ABOUT TAB -->
+      <div id="about" class="tab-content active">
+        <h2>About</h2>
+      <p>
+        I'm currently a <strong>researcher in the AI Foundations group at IBM Research AI</strong>,
+        where I work on post-training for large language models, including self-improvement algorithms, latent reasoning approaches, RLHF,
+        and reward modeling. 
+      </p>
+      <p>
+        Previously, I graduated from the University of Pennsylvania, completing three degrees simultaneously, in Computer Science (M.S.E/B.S.E) from the School of Engineering, along with Statistics and Finance (B.S. in Economics) from the Wharton School. I have been fortunate to be advised by Prof. Weijie Su, Prof. Surbhi Goel, and Prof. Aaron Roth across various facets of language modeling research. I founded and served as president of <a href="https://mlrpenn.vercel.app/">MLR@Penn</a>, the first student-led AI research organization and community at Penn.
+
+      </p>
+      <div class="tagline-box">
+        My long-term goal is to build superintelligent agents that continually self-evolve their capabilities in real-time deployment while retaining reliability and trustworthiness. Such agents would learn and adapt to relevant skills on-the-fly, autonomously seek out new knowledge, and collaborate effectively with humans. My work seeks to develop the algorithmic foundations for such systems, balancing empirical rigor and theoretical understanding.
+      </div>
+      </div>
+
+      <!-- PUBLICATIONS TAB -->
+      <div id="publications" class="tab-content">
+        <h2>Publications & Preprints</h2>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/staple.jpg" alt="Latent Principle Discovery image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Latent Principle Discovery for Language Model Self-Improvement</div>
+          <div class="pub-authors">Keshav Ramji, Tahira Naseem, Ramón Fernandez Astudillo</div>
+          <div class="pub-venue"><em>NeurIPS 2025 </em></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2505.16927">PDF</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/meta-tokens.jpg" alt="Meta-tokens image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Language Modeling with Learned Meta-Tokens</div>
+          <div class="pub-authors">Alok Shah*, Khush Gupta*, Keshav Ramji*, Pratik Chaudhari</div>
+          <div class="pub-venue"><em>ICML 2025 Workshop on Long-Context Foundation Models</em></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2509.16278?">PDF</a>
+          </div>
+          </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/cpt.jpg" alt="CPT MAS image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Modeling Human Behavior Without Humans: Prospect Theoretic Multi-Agent Reinforcement Learning</div>
+          <div class="pub-authors">Sheyan Lalmohammed*, Khush Gupta*, Alok Shah*, Keshav Ramji*,‡</div>
+          <div class="pub-venue"><em>ICML 2025 Workshop on Multi-Agent Systems in the Era of Foundation Models</em></div>
+          <div class="pub-links">
+            <a href="https://openreview.net/pdf?id=XDZdrTMWbM">PDF</a>
+          </div>
+          </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/personalization-sycophancy.jpg" alt="Personalization Sycophancy image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Position: Personalization Methods Should Address Sycophancy Risks to Improve LLM Alignment</div>
+          <div class="pub-authors">Sriram Tolety*, Daniel Mika*, Aalok Patwa*, Keshav Ramji*,‡</div>
+          <div class="pub-venue"><em>Preprint, 2025</em></div>
+                <div class="pub-links">
+          <a href="https://personalization-sycophancy.github.io/assets/paper.pdf">PDF</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/coherent-factuality.jpg" alt="Conformal Language Model Reasoning image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Conformal Language Model Reasoning with Coherent Factuality</div>
+          <div class="pub-authors">Maxon Rubin-Toles*, Maya Gambhir*, Keshav Ramji, Aaron Roth, Surbhi Goel</div>
+          <div class="pub-venue"><em>ICLR 2025</em></div>
+                <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2505.17126?">PDF</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/w2s.jpg" alt="W2S Reasoning image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Weak-to-Strong In-Context Optimization of Language Model Reasoning</div>
+          <div class="pub-authors">Keshav Ramji*, Alok N Shah*, Vedant Gaur*, Khush Gupta*</div>
+          <div class="pub-venue"><em>NeurIPS 2024 Workshop on Model Attribution at Scale </em></div>
+                <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2405.12345">PDF</a>
+        </div>
+        </div>
+      </div>      
+        
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/investigating-meta-tokens.jpg" alt="Investigating Meta-Tokens image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Investigating Language Model Dynamics using Meta-Tokens</div>
+          <div class="pub-authors">Alok N Shah*, Khush Gupta*, Keshav Ramji*, Vedant Gaur*</div>
+          <div class="pub-venue"><em>NeurIPS 2024 Workshop on Model Attribution at Scale </em></div>
+                <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2405.12345">PDF</a>
+        </div>
+        </div>
+      </div>   
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/granite-3-0.jpg" alt="Granite 3.0 Language Models image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Granite 3.0 Language Models</div>
+          <div class="pub-authors">IBM Granite Team</div>
+          <div class="pub-venue"><em>Technical Report, 2024 </em></div>
+                <div class="pub-links">
+          <a href="https://www.rivista.ai/wp-content/uploads/2024/10/paper-1.pdf">PDF</a>
+        </div>
+        </div>
+      </div> 
+        
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/congressional-ai.jpg" alt="Congressional AI image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Congressional AI: A Framework for Task Generalization and Alignment with Expert Language Models</div>
+          <div class="pub-authors">Keshav Ramji</div>
+          <div class="pub-venue"><em> Wharton Research Scholars Thesis, 2024 </em></div>
+                <div class="pub-links">
+          <a href="https://repository.upenn.edu/bitstreams/a59dd461-ad0b-4c43-8336-18f834b81b0f/download">PDF</a>
+        </div>
+        </div>
+      </div> 
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/self-refinement.jpg" alt="Self-Refinement image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Self-Refinement of Language Models from External Proxy Metrics Feedback</div>
+          <div class="pub-authors">Keshav Ramji, Young-Suk Lee, Ramón Fernandez Astudillo, Md Arafat Sultan, Tahira Naseem, Asim Munawar, Radu Florian, Salim Roukos</div>
+          <div class="pub-venue"><em>Preprint, 2024 </em></div>
+                <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2403.00827">PDF</a>
+        </div>
+        </div>
+      </div> 
+
+      <div class="pub-item">
+        <div class="pub-image">
+          <img src="images/self-select.jpg" alt="Self-Select image">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">Self-Select: Optimizing Instruction Selection for Large Language Models</div>
+          <div class="pub-authors">Keshav Ramji, Alexander Kyimpopkin</div>
+          <div class="pub-venue"><em>NeurIPS 2023 Workshop on Foundation Models for Decision Making</em></div>
+                <div class="pub-links">
+          <a href="https://openreview.net/pdf?id=khL3G4iwd0">PDF</a>
+        </div>
+      </div> 
+      </div>
+      </div>
+
+
+      <!-- EXPERIENCE TAB -->
+      <div id="experience" class="tab-content">
+        <h2>Experience</h2>
+
+      <div class="experience-item">
+        <h3>Researcher / Engineer, IBM Research</h3>
+        <span class="meta">August 2024 — Present</span>
+        <p>
+          Working on LLM reasoning, alignment, and inference scaling in the Generative Model Alignment team, including:
+        </p>
+        <ul>
+          <li>Self-improvement algorithms bridging alignment and self-correction abilities.</li>
+          <li>Strategies for efficient latent reasoning. </li>
+          <li>Reward modeling for Granite 3.3 and 4.0 post-training. </li>
+        </ul>
+      </div>
+
+     <div class="experience-item">
+        <h3>Undergraduate Researcher, University of Pennsylvania</h3>
+        <span class="meta">October 2022 — August 2024</span>
+        <p>
+          Worked on various projects in multi-task adaptation, preference alignment, and reliability:
+        </p>
+        <ul>
+          <li>Wharton Honors Thesis (Statistics Department) supervised by Prof. Weijie Su: developed a flexible and adaptable framework for post-hoc mixture-of-experts construction from independently trained experts. </li>
+          <li>Collaborated with Profs. Surbhi Goel and Aaron Roth on conformal prediction for language model reasoning. </li>
+          <li>Worked with Prof. Aaron Roth on calibration and preference distribution alignment for language model steerability and personalization. </li>
+        </ul>
+      </div>
+    </section>
+
+      <div class="experience-item">
+        <h3>AI Research Intern, IBM Research, Generative Model Alignment</h3>
+        <span class="meta">May 2023 — August 2023</span>
+        <p>
+          Hosted by the Generative Model Alignment team, developed a novel approach for improving the self-refinement / self-correction capabilities of LLMs via in-context learning. Explored the application of this method for intrinsic self-correction in Conversational AI through self-training.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>AI Research Intern, IBM Research, Semantic Parsing</h3>
+        <span class="meta">May 2022 — August 2023</span>
+        <p>
+          Hosted by the Multilingual NLP Group, focusing on semantic parsing, as one of the few undergraduate interns in the IBM Research's AI division. Worked on Text-to-RDF Graph parsing, through graph structure representations and fine-tuning pre-trained sequence-to-sequence LLMs. 
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Machine Learning Research Assistant, Perelman School of Medicine</h3>
+        <span class="meta">May 2021 — December 2021</span>
+        <p>
+          Supervised by Prof. Ryan Urbanowicz, worked on an AutoML system with deep learning methods (AutoMLPipe-DL), to compare its performance to AutoML systems with classical Machine Learning algorithms for classification tasks on electronic health record data. Used probabilistic graphical models as unsupervised feature extractors for high-dimensional noisy tabular data, serving as a denoising technique, and demonstrated its efficacy for classification in the AutoML setting.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Senior Data Analyst, Wharton Analytics Fellows</h3>
+        <span class="meta">January 2021 — December 2021</span>
+        <p>
+          In Fall 2021, worked with <strong>Zillow</strong> on large-scale customer segmentation using an approach considering customer states across time periods. We used clustering approaches to define customer segments, and assigned labels to represent their current states, enabling supervised learning in a multi-label multi-class classification setting. Read the feature article on my team's work here!
+        </p>
+        <p>
+          In Spring 2021, worked with <strong>Fox Entertainment Corp.</strong> on outlier detection and viewership prediction with social media marketing data for show premieres and campaign lead-up. Used clustering methods and trend analysis to identify successful campaigns, and presented our analysis to company executives, which was well received.
+        </p>
+      </div>
+      </div>
+
+      <!-- TEACHING TAB -->
+      <div id="teaching" class="tab-content">
+        <h2>Coursework </h2>
+        <p style="margin-bottom:5mm;">I have taken a myriad of advanced courses in computer science, mathematics, electrical engineering, statistics, and finance. Selected courses are included below; 500-level courses are Master's, 600 and 700-level courses are PhD or MBA-level (for finance).</p>
+
+        <div class="experience-item">
+        <h3>Computer Science and Math</h3>
+        <span class="meta"></span>
+        <p>
+          CIS 121 (Algorithms and Data Structures), taught by Rajiv Gandhi
+        </p>
+        <p>
+          CIS 320 (Analysis of Algorithms), taught by Sanjeev Khanna
+        </p>
+        <p>
+          MATH 360 (Real Analysis), taught by Andrew Cooper
+        </p>
+        <p>
+          CIS 505 (Distributed Systems), taught by Linh Thi Xuan Phan
+        </p>
+        <p>
+          CIS 515 (Advanced Linear Algebra and Optimization Theory), taught by Jean Gallier
+        </p>
+        <p>
+          CIS 520 (Machine Learning), taught by Jacob Gardner
+        </p>
+        <p>
+          CIS 548 (Operating Systems Design and Implementation), taught by Boon Thau Loo
+        </p>
+        <p>
+          CIS 550 (Database and Information Systems), taught by Susan Davidson
+        </p>
+        <p>
+          ESE 605 (Modern Convex Optimization), taught by Nikolai Matni
+        </p>
+        <p>
+          CIS 625 (Theory of Machine Learning), taught by Michael Kearns
+        </p>
+        <p>
+          ESE 674 (Information Theory), taught by Shirin Bidokhti
+        </p>
+        <p>
+          CIS 677 (Randomized Algorithms), taught by Sanjeev Khanna
+        </p>
+        <p>
+          CIS 700 (LLMs and Decision Making), taught by Dan Roth
+
+        </p>
+      </div>
+        
+      <div class="experience-item">
+        <h3>Statistics and Finance</h3>
+        <span class="meta"></span>
+        <p>
+          STAT 430 (Probability Theory), taught by Mark Low
+        </p>
+        <p>
+          STAT 433 (Stochastic Processes), taught by Mark Low
+        </p>
+        <p>
+          STAT 476/776 (Applied Probability Models in Marketing), taught by Peter Fader
+        </p>
+        <p>
+          ESE 542 (Statistics for Data Science), taught by Hamed Hassani
+        </p>
+        <p>
+          STAT 991 (Reinforcement Learning Theory), taught by Yuting Wei
+        </p>
+        <p>
+          FNCE 100H (Honors Corporate Finance), taught by Itamar Drechsler
+        </p>
+        <p>
+          FNCE 101H (Honors Monetary Economics and the Global Economy), taught by Martin Asher
+        </p>
+        <p>
+          FNCE 205 (Investment Management), taught by Robert Stambaugh
+        </p>
+        <p>
+          FNCE 207 (Corporate Valuation), taught by David Wessels
+        </p>
+        <p>
+          FNCE 217/717 (Financial Derivatives), taught by Domenico Cuoco
+        </p>
+        <p>
+          FNCE 225/725 (Fixed Income Securities), taught by Stephan Dieckmann
+        </p>
+      </div>
+
+
+        <h2>Teaching</h2>
+<p style="margin-bottom:5mm;">I have served as a TA for six courses at Penn -- often taking on multiple roles per semester -- including two doctoral-level courses and as Head TA for Machine Learning. I was inducted into the TA Hall of Fame for exceptional teaching contributions as an undergraduate student, and as the first awardee for an ML course.</p>
+      <div class="experience-item">
+        <h3>Teaching Assistant, Convex Optimization, University of Pennsylvania</h3>
+        <span class="meta">January 2024 - May 2024</span>
+        <p>
+          TA for ESE 605 (doctoral-level Convex Optimization) with Prof. Nikolai Matni. Topics include: Convex sets, functions, optimization problems; convex analysis; duality theory; algorithms for unconstrained minimization and equality-constrained optimization; interior-point methods; applications in statistical estimation and machine learning, information theory, control and systems.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Head Teaching Assistant, Machine Learning, University of Pennsylvania</h3>
+        <span class="meta">August 2022 - December 2023</span>
+        <p>
+          Served as Head TA for CIS 520 (the primary Machine Learning course at Penn), with Profs. Surbhi Goel, Eric Wong, Jacob Gardner, and Lyle Ungar. Drove the course's curriculum re-design, led development of assignments and exams, and coordinated the TA team for office hours, review sessions, and grading for over 200 students each semester. Mentored student final projects in various topics of machine learning, deep learning, and RL. 
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Teaching Assistant, Theory of Machine Learning, University of Pennsylvania</h3>
+        <span class="meta">August 2023 - December 2023</span>
+        <p>
+          Teaching Assistant for CIS 625 (doctoral-level Theory of Machine Learning) with Prof. Michael Kearns. Topics include Probably Approximately Correct (PAC) learning, Vapnik-Chervonenkis (VC) dimension, uniform convergence, Statistical Query (SQ) learning, boosting algorithms, No-Regret learning and game theory, fairness in machine learning, and differential privacy.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Teaching Assistant, Financial Derivatives, University of Pennsylvania</h3>
+        <span class="meta">August 2023 - December 2023</span>
+        <p>
+          Teaching Assistant for FNCE 717 (MBA-level Financial Derivatives) with Prof. Domenico Cuoco. Topics include Forwards, Futures, Swaps, Binomial Model and Black-Scholes-Merton Model for Pricing European Options, American Options, Volatility Derivatives, Monte Carlo Simulation and Stochastic Volatility Models, the Options Greeks, and Dynamic Hedging.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Teaching Assistant, Algorithms, University of Pennsylvania</h3>
+        <span class="meta">January 2023 - May 2023</span>
+        <p>
+          Teaching Assistant for CIS 320 (Advanced Algorithms) with Prof. Sanjeev Khanna. Topics include graph algorithms, dynamic programming, NP-completeness theory, and approximation algorithms.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Teaching Assistant, Probability, University of Pennsylvania</h3>
+        <span class="meta">August 2021 - December 2022</span>
+        <p>
+          Teaching Assistant for STAT 430/510 (introductory calculus-based probabilty) at the Wharton School, with Prof. Winston Lin. Responsible for hosting weekly office hours, grading assignments, and leading review sessions.
+        </p>
+      </div>
+      </div>
+
+      <!-- MENTORING & LEADERSHIP TAB -->
+      <div id="mentoring" class="tab-content">
+        <h2>Mentoring and Leadership</h2>
+
+      <div class="experience-item">
+        <h3><a href="https://mlrpenn.vercel.app/">Machine Learning Research at Penn (MLR@Penn)</a></h3>
+        <span class="meta">Spring 2023 - Present </span>
+        <p>
+          I am the <strong>founder and former president of Machine Learning Research at Penn (MLR@Penn) </strong>, the largest AI and Machine Learning student organization at Penn, with over 500 new members since its inception in March 2023. This serves as a cohesive community of undergraduate students who are excited about getting involved in research in AI/ML, encouraged to stay up-to-date with the latest findings, and mentored along their research journey.  
+        </p>
+        <p>
+          I started an in-house research group of ~30 students to develop novel, impactful findings toward publication, as well as an outreach committee, which drives speaker engagements from both industry and academia. We successfully hosted a <strong> </strong>co-located mentorship workshop with the inaugural Conference on Language Modeling (COLM) in Fall 2024 </strong>. I continue to mentor student projects and advise the group's research directions. 
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Wharton Investment and Trading Group -- Quantitative Investment Strategies (QIS)</h3>
+        <span class="meta">September 2021 - May 2024 </span>
+        <p>
+Wharton Investment and Trading Group (WITG) is the premier undergraduate organization aimed towards investing and trading financial careers. As a <strong> portfolio manager </strong> (one of 4 co-leaders) for the Quantitative Investment Strategies (QIS) Team, I led weekly discussions on quantitative research topics including market impact, financial derivatives, commodities markets, etc., and discuss quantitative trading strategies. We also complete semester-long projects on an area of interest in quantitative finance.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Wharton Undergraduate Data Analytics Club (WUDAC)</h3>
+        <span class="meta">Fall 2020 - May 2024 </span>
+        <p>
+          I was the <strong> president </strong> of WUDAC, the largest data science-focused student organization at Penn, and one of the largest student groups on campus. I was responsible for driving engagement for data science initiatives at Penn, hosting speaker events, and fostering collaborations, with other student organizations as well as corporate sponsors.
+        </p>
+        <p>
+          Before this, I was the VP of Education, where I was responsible for leading lectures in Python and R on various topics in data science, classical machine learning algorithms, and introductory topics in deep learning. 
+        </p>
+      </div>
+      </div>
+
+      <!-- AWARDS TAB -->
+      <div id="awards" class="tab-content">
+        <h2>Service</h2>
+        <ul>
+          <li>Conference and Journal Reviewer: ICLR (2025, 2026), NeurIPS Position Paper Track (2025), TMLR (2025-)</li>
+          <li>Workshop Reviewing: NeurIPS (ER 2025, ATTRIB 2024, FMDM 2023, R0-FoMo 2023), ICLR (SCI-FM 2025)</li>
+          <li>Workshop Organization: <a href="https://mlrpenn.vercel.app/workshops/MLR%40Penn%20Workshop%20on%20Foundation%20Models">MLR@Penn (Mentorship) Workshop on Foundation Models at COLM 2024</a></li>
+        </ul>
+
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="https://keshavramji.notion.site/Introductory-Intermediate-ML-Learning-Resources-d8923df3d7df4b4988146c70565c010c">Compilation of Open Materials in ML</a></li>
+          <li><a href="https://keshavramji.notion.site/A-Guide-to-CIS-Statistics-and-AI-ML-at-Penn-ab887f75bd584601aac9284082b53d14">Guide to CS and AI/ML Coursework at Penn</a></li>
+        </ul>
+
+        <h2>Awards</h2>
+        <ul>
+          <li><strong>Max Mintz Undergraduate TA Hall of Fame, University of Pennsylvania</strong>, 2024</li>
+          <li><strong>Citadel x Citadel Securities East Coast Regional Datathon Winner</strong>, 2022</li>
+          <li><strong>Coca-Cola Scholar</strong>, 2020</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+  <script>
+    // Tab switching function
+    function openTab(evt, tabName) {
+      // Hide all tab contents
+      const tabContents = document.getElementsByClassName('tab-content');
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active');
+      }
+
+      // Remove active class from all tabs
+      const tabs = document.getElementsByClassName('tab');
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+
+      // Show current tab and mark button as active
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+
+      // Scroll to top of content when switching tabs
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Back to top button functionality
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Keyboard navigation for tabs
+    document.addEventListener('keydown', (e) => {
+      const tabs = Array.from(document.querySelectorAll('.tab'));
+      const activeTab = document.querySelector('.tab.active');
+      const currentIndex = tabs.indexOf(activeTab);
+
+      if (e.key === 'ArrowRight' && currentIndex < tabs.length - 1) {
+        tabs[currentIndex + 1].click();
+        tabs[currentIndex + 1].focus();
+      } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        tabs[currentIndex - 1].click();
+        tabs[currentIndex - 1].focus();
+      }
+    });
+  </script>
+</body>
+</html>
